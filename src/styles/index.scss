@@ -1,0 +1,91 @@
+@import 'reset.scss';
+
+/* Sayu */
+.sayu {
+  position: absolute;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: var(--z-index);
+  &.active {
+    display: flex;
+  }
+
+  .sayu-menu-container {
+    width: var(--R);
+    height: var(--R);
+    min-width: var(--R);
+    min-height: var(--R);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sayu-mask {
+    position: fixed;
+    inset: 0;
+  }
+
+  .sayu-panel {
+    width: calc(var(--r) - var(--gap));
+    height: calc(var(--r) - var(--gap));
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(227, 227, 251, 1);
+    border-radius: 50%;
+  }
+
+  .sayu-menu-item {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  /* Common */
+  .sayu-sector {
+    position: absolute;
+    inset: 0;
+    pointer-events: auto;
+  }
+
+  .sayu-menu-scaled {
+    position: absolute;
+    width: var(--sR);
+    height: var(--sR);
+    pointer-events: none;
+  }
+
+  .sayu-menu {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    .sayu-sector {
+      background-color: rgba(111, 111, 199, 0.2);
+
+      display: flex;
+      justify-content: center;
+      transition: all 0.25s ease-out;
+      &.active {
+        background-color: rgba(238, 168, 219, 1);
+      }
+      .sayu-sector-adjust-towards {
+        height: calc((var(--R) - var(--r)) / 2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        .sayu-content {
+          color: white;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
